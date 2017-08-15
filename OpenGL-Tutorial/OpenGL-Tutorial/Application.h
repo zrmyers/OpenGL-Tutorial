@@ -1,12 +1,16 @@
 #pragma once
 //includes for graphics libraries
 #include <SDL.h>
-#define GLEW_STATIC
 #include <GL\glew.h>
 #include <SDL_opengl.h>
 
 //includes for data types
 #include <string>
+
+typedef struct gl_buffer {
+	GLuint bObject;
+	GLenum bType;
+} gl_buffer;
 
 class Application
 {
@@ -27,10 +31,10 @@ private:
 private:
 	//OpenGL
 	GLuint vao;
-	GLuint vbo;
 	GLuint vertexShader;
 	GLuint fragmentShader;
 	GLuint shaderProgram;
 	GLint  posAttrib;
+	GLint colAttrib;
 };
 
